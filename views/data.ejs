@@ -1,0 +1,44 @@
+<h1>Patients</h1>
+<table>
+    <thead>
+        <tr>
+            <th> Patient ID</th>
+            <th> First Name</th>
+            <th> Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% patients.forEach(row => {%>
+            <tr>
+                <td> <%= row.patient_id %> </td>
+                <td> <%= row.first_name %> </td> 
+                <td> <%= row.last_name %> </td>
+                <td> <%= row.date_of_birth %> </td>
+            </tr>
+        <%});%>
+    </tbody>
+
+</table>
+
+<h1>Providers</h1>
+<table>
+    <thead>
+        <tr>
+            <th> Provider ID</th>
+            <th> First Name</th>
+            <th> Last Name</th>
+            <th> provider Specialty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% providers.forEach(row => {%>
+            <tr>
+                <td> <%= row.provider_id %> </td>
+                <td> <%= row.first_name %> </td> 
+                <td> <%= row.last_name %> </td>
+                <td> <%= row.provider_specialty %> </td>
+            </tr>
+        <%});%>
+    </tbody>
+
+</table>
