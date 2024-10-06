@@ -4,7 +4,6 @@ const app = express()
 // DBMS Mysql
 const mysql = require('mysql2');
 
-// Question 1 goes here
 // cross origin resource sharing - format webbrowser content
 const cors = require('cors');
 // environment variable
@@ -35,18 +34,18 @@ db.connect((err) => {
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
+    // question 1 etrieves all patients and displays their: patientid, first name, last_name, date of birth
 app.get('/data', (req,res) =>{
     const patientsQuery = 'SELECT * FROM patients';
     const providersQuery = 'SELECT * FROM providers';
     
-    // question 1 etrieves all patients and displays their: patientid, first name, last_name, date of birth
     db.query(patientsQuery, (err, patientresults) =>{
         if(err){
             console.error(err);
             return res.status(500).send('Error retrieving data from patients')
         }
 
-        // displays all providers with their: first_name, last_name, provider_specialty
+        // Question 2 displays all providers with their: first_name, last_name, provider_specialty
         db.query(providersQuery, (err, providerresults) =>{
             if(err){
                 console.error(err);
